@@ -1,0 +1,1087 @@
+/* Global Styles */
+:root {
+    --primary-color: #8B7355;
+    --secondary-color: #D4C4B7;
+    --text-color: #333;
+    --light-bg: #F9F6F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.menu a {
+    margin: 0 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+.book-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.book-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 70px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Designs Section */
+.designs {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.design-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.design-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 5%;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Contact Form */
+.contact {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.appointment-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.appointment-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+} 
+
+/* Timeline Process */
+.process {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    padding: 2rem 0;
+    position: relative;
+    width: 50%;
+    transform: translateX(-100%);
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(100%);
+    margin-left: 50%;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -60px;
+}
+
+/* Lookbook Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem 5%;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Gallery Modal */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.gallery-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+    min-width: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Fabric Selection */
+.fabric-selection {
+    padding: 3rem 5%;
+}
+
+.fabric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fabric-card {
+    text-align: center;
+    padding: 1rem;
+}
+
+.fabric-sample {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.fabric-sample img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Measurement Guide */
+.measurement-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.measurement-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.step-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Updated Calculator Styles */
+.size-calculator {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.calculator-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.measurement-inputs {
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+#calculate-size {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+#calculate-size:hover {
+    background: var(--accent-color);
+}
+
+.size-result {
+    padding: 2rem;
+    text-align: center;
+}
+
+#size-output {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin: 1.5rem 0;
+    font-weight: bold;
+}
+
+.size-note {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.size-chart {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.size-chart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.size-chart th,
+.size-chart td {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.size-chart th {
+    background: var(--light-bg);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .calculator-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .measurement-inputs {
+        padding: 1.5rem;
+    }
+
+    #size-output {
+        font-size: 2.5rem;
+    }
+
+    .size-chart {
+        overflow-x: auto;
+    }
+} 
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .appointment-container {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem;
+    }
+} 
+
+/* CTA Button Styling */
+.cta-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.cta-btn:hover {
+    color: var(--primary-color);
+}
+
+.cta-btn:hover::before {
+    width: 100%;
+}
+
+.cta-btn:active {
+    transform: scale(0.95);
+}
+
+/* Add animation for when the button appears */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero .cta-btn {
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .cta-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+} 
+
+/* Add/Update these responsive styles */
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        order: 2;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        order: 1;
+    }
+
+    .book-btn {
+        order: 3;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        order: 4;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu a {
+        display: block;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #eee;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+    }
+
+    .menu a:hover {
+        background-color: #f5f5f5;
+        color: var(--primary-color);
+        padding-left: 2.5rem;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* Animation for menu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu.active {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Ensure menu is hidden on desktop */
+@media screen and (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu {
+        display: flex !important;
+    }
+}
+
+/* Animation for menu toggle icon */
+.menu-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle.active i {
+    transform: rotate(90deg);
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .fabric-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-btn,
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Add viewport-based padding */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 3rem 1rem;
+    }
+}
+
+/* Fix table overflow on mobile */
+@media screen and (max-width: 768px) {
+    .size-chart {
+        margin: 1rem -1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Add smooth touch scrolling */
+@media (hover: none) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+} 
+
+/* Fix Calculator and Header Buttons for Mobile */
+@media screen and (max-width: 768px) {
+    /* Header Buttons */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .book-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        order: 3; /* Push to the right */
+    }
+
+    .menu-toggle {
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    /* Calculator Fixes */
+    .calculator-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .measurement-inputs {
+        padding: 1rem;
+    }
+
+    .input-group {
+        margin-bottom: 1rem;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        height: 44px; /* Better touch target */
+    }
+
+    #calculate-size {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        height: 44px;
+        margin-top: 1rem;
+    }
+
+    .size-result {
+        padding: 1rem;
+    }
+
+    #size-output {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .size-chart {
+        margin-top: 1.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .size-chart table {
+        min-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .size-chart th,
+    .size-chart td {
+        padding: 0.5rem;
+        white-space: nowrap;
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 375px) {
+    .navbar {
+        padding: 0.8rem;
+    }
+
+    .book-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .calculator-container {
+        margin: 0.5rem;
+        padding: 0.8rem;
+    }
+
+    #size-output {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ensure buttons are always clickable */
+@media (hover: none) {
+    .book-btn,
+    #calculate-size {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+} 
+
+/* Measurement Guide Mobile Fixes */
+@media screen and (max-width: 768px) {
+    .measurement-guide {
+        padding: 3rem 1rem;
+    }
+
+    .measurement-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .measurement-image {
+        order: -1; /* Move image to top */
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .measurement-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .measurement-steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .step-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .step-card h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--primary-color);
+    }
+
+    .step-card p {
+        margin: 0.3rem 0 0;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    /* Add some animation when cards come into view */
+    .step-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .step-card:nth-child(1) { animation-delay: 0.1s; }
+    .step-card:nth-child(2) { animation-delay: 0.2s; }
+    .step-card:nth-child(3) { animation-delay: 0.3s; }
+    .step-card:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 375px) {
+    .measurement-guide {
+        padding: 2rem 0.8rem;
+    }
+
+    .measurement-container {
+        padding: 0.8rem;
+    }
+
+    .step-card {
+        padding: 0.8rem;
+    }
+
+    .step-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .step-card p {
+        font-size: 0.8rem;
+    }
+} 
+
+/* Social Media Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .social-icons {
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .social-icons a {
+        font-size: 1.8rem; /* Larger touch target for mobile */
+    }
+} 
+
+/* Stylish Hamburger Menu Icon */
+.menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+    }
+
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: left;
+    }
+
+    /* Animation for menu icon when active */
+    .menu-toggle.active span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:last-child {
+        transform: rotate(-45deg);
+    }
+
+    /* Hover effect */
+    .menu-toggle:hover span {
+        background-color: var(--accent-color);
+    }
+} 
