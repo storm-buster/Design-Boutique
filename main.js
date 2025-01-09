@@ -89,6 +89,9 @@ class SizeCalculator {
 document.addEventListener('DOMContentLoaded', function() {
     new SizeCalculator();
 
+    // Initialize EmailJS
+    emailjs.init("s5zCl0eo3nxJun0a1"); // Replace with your EmailJS public key
+
     // Appointment button handler
     const bookBtn = document.querySelector('.book-btn');
     if (bookBtn) {
@@ -106,18 +109,39 @@ document.addEventListener('DOMContentLoaded', function() {
         appointmentForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = this.name.value.trim();
-            const email = this.email.value.trim();
-            const phone = this.phone.value.trim();
-            const service = this.service.value;
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
 
-            if (!name || !email || !phone || !service) {
-                alert('Please fill in all required fields');
-                return;
-            }
+            // Prepare email parameters
+            const templateParams = {
+                name: this.name.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                service: this.service.value,
+                notes: this.notes.value,
+                to_email: 'khushiboutique016@gmail.com' // Replace with your email
+            };
 
-            alert('Thank you! We will contact you shortly to confirm your appointment.');
-            this.reset();
+            // Send email
+            emailjs.send('service_o57ojba', 'template_ho84hkr', templateParams)
+                .then(() => {
+                    // Success
+                    alert('Thank you! Your appointment request has been sent. We will contact you shortly.');
+                    appointmentForm.reset();
+                })
+                .catch((error) => {
+                    // Error
+                    console.error('Email error:', error);
+                    alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
+                })
+                .finally(() => {
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
